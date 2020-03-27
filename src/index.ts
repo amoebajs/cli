@@ -1,9 +1,15 @@
-import * as path from "path";
-import * as fs from "fs";
+import { createContent, ACTION } from "./base";
+import { createModule } from "./module";
 
-const [command, entrypoint, action, ...argv] = process.argv;
+if (ACTION !== "module") {
+  throw new Error("only action [module] is supported.");
+}
 
-console.log(command);
-console.log(entrypoint);
-console.log(action);
-console.log(argv);
+const context = createContent();
+
+createModule(context)
+  .then(() => process.exit(0))
+  .catch(error => {
+    console.log(error);
+    process.exit(1);
+  });

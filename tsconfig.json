@@ -12,5 +12,6 @@
     "importHelpers": true,
     "outDir": "dist"
   },
-  "include": ["src"]
+  "include": ["src"],
+  "exclude": ["assets"]
 }
