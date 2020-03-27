@@ -1,0 +1,16 @@
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+    "target": "es2017",
+    "module": "commonjs",
+    "strict": true,
+    "declaration": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "importHelpers": true,
+    "outDir": "dist"
+  },
+  "include": ["src"]
+}

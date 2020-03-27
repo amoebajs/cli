@@ -4,5 +4,26 @@
   "main": "index.js",
   "repository": "https://github.com/amoebajs/cli.git",
   "author": "bigmogician <bigmogician@outlook.com>",
-  "license": "AGPL-3.0-only"
+  "license": "AGPL-3.0-only",
+  "scripts": {
+    "watch": "tsnd --respawn src/index.ts",
+    "run": "ts-node src/index.ts",
+    "prebuild": "rimraf dist",
+    "build": "tsc",
+    "postbuild": "copy bin/* dist/",
+    "pub": "yarn build && node scripts/stable.publish.js",
+    "rc": "yarn build && node scripts/rc.publish.js"
+  },
+  "bin": {
+    "amoeba": "bin/amoeba"
+  },
+  "devDependencies": {
+    "@bigmogician/publisher": "^1.0.12",
+    "@types/node": "^10.16.0",
+    "copy": "^0.3.2",
+    "rimraf": "^3.0.2",
+    "ts-node": "^8.8.1",
+    "ts-node-dev": "^1.0.0-pre.44",
+    "typescript": "^3.8.3"
+  }
 }
